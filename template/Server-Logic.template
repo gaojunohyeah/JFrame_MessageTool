@@ -1,0 +1,14 @@
+/**
+ * {{ msgBean.name }}逻辑处理
+ * Created by auto tool.
+ */
+
+'use strict';
+
+// {{ msgBean.comment }}
+module.exports = function (reqData) {
+  var msg = new JF.msg.{{ msgBean.package }}{{ msgBean.name }}Msg();
+  msg.init(reqData);
+
+  return null;
+};

@@ -1,0 +1,10 @@
+/**
+ * 消息服务实例类
+ * Created by auto tool.
+ */
+
+'use strict';
+
+{% for msgBean in msgBeans %}
+exports.{{ msgBean.package }}{{ msgBean.name }}Msg = require('./../message/msg/{{ msgBean.package }}{{ msgBean.name }}Msg');
+{% endfor %}
