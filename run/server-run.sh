@@ -13,6 +13,8 @@ outSrvPath=$outPath'/app/service'
 
 #svn update $apiPath'/'
 #svn update $msgPath'/'
+git pull $toolPath
+git pull $projectPath
 
 python $toolPath'/src/MessageBuilder.py'
 
