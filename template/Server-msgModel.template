@@ -11,11 +11,11 @@ module.exports = function (data){
     {% for field in msgBean.fields -%}
     this.{{ field.name }} = data.{{ field.name }} || {% if 'string'==field.type %}''{% else %}0{% endif %};
     {% endfor %}
-  };
+  }
 
   this.setMsgtype = function(msgType){
     this.msgType = msgType;
-  }
+  };
 
   {% for field in msgBean.fields %}
   this.set{{ field.name.capitalize()  }} = function({{ field.name }}){
