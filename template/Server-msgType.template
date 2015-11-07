@@ -1,0 +1,13 @@
+/**
+ * 消息类型集合
+ * Created by auto tool.
+ */
+
+'use strict';
+
+module.exports = {
+  {% for msgBean in msgBeans %}
+  // {{ msgBean.comment }}
+  '{{ msgBean.id }}' : '{{ msgBean.package.lower() }}/{{ msgBean.name }}',
+  {% endfor %}
+};

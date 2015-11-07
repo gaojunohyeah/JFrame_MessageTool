@@ -40,8 +40,8 @@ def MsgFileBuild(temPath, messageBeans):
     builder = ServerMessageBuilder.ServerMessageBuilder(messageBeans, env)
     if not builder.buildMsgFile():
         print "server msgbuild error in ServerMessageBuilder, message.js"
-    #
-    # # 客户端init.lua
-    # builder = ClientInitBuilder.ClientInitBuilder(messageBeans, env)
-    # if not builder.buildMsgFile():
-    #     print "server msgbuild error in ClientInitBuilder, init.lua"
+
+    # 服务端MessageType.lua
+    builder = ServerMsgTypeBuilder.ServerMsgTypeBuilder(messageBeans, env)
+    if not builder.buildMsgFile():
+        print "server msgbuild error in ServerMsgTypeBuilder, MessageType.lua"

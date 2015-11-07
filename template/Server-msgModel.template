@@ -5,12 +5,17 @@
 
 'use strict';
 
-module.exports = function (){
-  this.init = function(data){
+module.exports = function (data){
+  if(!_.isUndefined(data) && !_.isNull(data)){
+    this.msgType = data.msgType || 0;
     {% for field in msgBean.fields -%}
     this.{{ field.name }} = data.{{ field.name }} || {% if 'string'==field.type %}''{% else %}0{% endif %};
     {% endfor %}
   };
+
+  this.setMsgtype = function(msgType){
+    this.msgType = msgType;
+  }
 
   {% for field in msgBean.fields %}
   this.set{{ field.name.capitalize()  }} = function({{ field.name }}){

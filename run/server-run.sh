@@ -3,18 +3,18 @@ toolPath='/Users/rayjoy/gaojun/git/JFrame_MessageTool'
 projectPath='/Users/rayjoy/gaojun/webstrom/JFrame'
 
 apiPath=$projectPath'/app/api'
-msgPath=$projectPath'/app/message/msg'
+msgPath=$projectPath'/app/message'
 srvPath=$projectPath'/app/service'
 
 outPath=$toolPath'/out/server'
 outApiPath=$outPath'/app/api'
-outMsgPath=$outPath'/app/message/msg'
+outMsgPath=$outPath'/app/message'
 outSrvPath=$outPath'/app/service'
 
 #svn update $apiPath'/'
 #svn update $msgPath'/'
-git pull $toolPath
-git pull $projectPath
+#git pull $toolPath
+#git pull $projectPath
 
 python $toolPath'/src/MessageBuilder.py'
 
@@ -46,8 +46,12 @@ do
 done
 
 echo ''
-echo 'copy to '$msgPath'/'
+echo 'copy to '$msgPath'/msg/'
 cp $outMsgPath'/'*.js  $msgPath'/'
+
+echo ''
+echo 'copy to'$msgPath'/MessageType.js'
+cp $outMsgPath'/MessageType.js'  $msgPath'/'
 
 echo ''
 echo 'copy to'$srvPath'/message.js'
