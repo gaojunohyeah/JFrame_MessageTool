@@ -47,7 +47,7 @@ done
 
 echo ''
 echo 'copy to '$msgPath'/msg/'
-cp $outMsgPath'/'*.js  $msgPath'/'
+cp $outMsgPath'/msg/'*.js  $msgPath'/msg/'
 
 echo ''
 echo 'copy to'$msgPath'/MessageType.js'
