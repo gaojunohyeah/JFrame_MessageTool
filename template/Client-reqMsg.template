@@ -1,0 +1,40 @@
+/**
+ * 客户端消息接口集合
+ * Created by auto tool.
+ */
+
+define(
+  [
+    'config',
+    'lodash',
+  ],
+  function (config, _) {
+    'use strict';
+
+    return function ($http) {
+      var host = config.local_url;
+      return {
+        {%- for msgBean in msgBeans -%}
+        {%- if "CS" == msgBean.typeCS %}
+        // {{ msgBean.comment }} request
+        {{ msgBean.lowName }}: function (data) {
+          var msgData = {};
+          msgData.msgType = {{ msgBean.id }};
+          {% for field in msgBean.fields -%}
+          // {{ field.comment }}
+          msgData.{{ field.name }} = data.{{ field.name }};
+          {% endfor -%}
+
+          var attrs = {};
+          {% if msgBean.base -%}
+          attrs.ignoreAuthModule = true;
+          {%- endif %}
+
+          return $http.post(host + '{% if msgBean.base %}{{ msgBean.lowName }}{% else %}game{% endif %}', msgData, attrs);
+        },
+        {%- endif -%}
+        {%- endfor %}
+      }
+    };
+  }
+);

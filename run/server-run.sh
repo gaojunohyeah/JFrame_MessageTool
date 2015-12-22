@@ -54,6 +54,10 @@ echo 'copy to'$msgPath'/MessageType.js'
 cp $outMsgPath'/MessageType.js'  $msgPath'/'
 
 echo ''
+echo 'copy to'$msgPath'/MessageAuth.js'
+cp $outMsgPath'/MessageAuth.js'  $msgPath'/'
+
+echo ''
 echo 'copy to'$srvPath'/message.js'
 cp $outSrvPath'/message.js'  $srvPath'/'
 echo "copy files, end...."

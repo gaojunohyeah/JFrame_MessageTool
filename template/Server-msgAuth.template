@@ -1,0 +1,13 @@
+/**
+ * 消息登陆验证集合
+ * Created by auto tool.
+ */
+
+'use strict';
+
+module.exports = {
+  {% for msgBean in msgBeans %}
+  // {{ msgBean.comment }}
+  '{{ msgBean.id }}' : {% if msgBean.auth %}true{% else %}false{% endif %},
+  {% endfor %}
+};

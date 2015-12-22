@@ -75,6 +75,7 @@ def loadMsgFile(path):
         comment = child.getAttribute('comment')
         base = child.getAttribute('base')
         isGm = child.getAttribute('isGm')
+        auth = child.getAttribute('auth')
 
         # 实例化 消息对象
         msgBean = MessageBean.MessageBean(packageName)
@@ -84,6 +85,7 @@ def loadMsgFile(path):
         msgBean.setComment(comment)
         msgBean.setBase(base)
         msgBean.setIsGm(isGm)
+        msgBean.setAuth(auth)
 
         # 消息唯一性验证
         if MsgCmdDic.get(msgBean.cmd):

@@ -16,6 +16,7 @@ class MessageBean(object):
 
     def setName(self, name):
         self.name = name
+        self.lowName = self.name[0].lower() + self.name[1:]
         self.cmd = self.package + "." + self.name
 
     def setId(self, id):
@@ -28,7 +29,16 @@ class MessageBean(object):
         self.fields = fields
 
     def setBase(self, base):
-        self.base = base
+        if 'true' == base or True == base:
+            self.base = True
+        else:
+            self.base = False
+
+    def setAuth(self, auth):
+        if 'true' == auth or True == auth:
+            self.auth = True
+        else:
+            self.auth = False
 
     def setIsGm(self, isGm):
         if "1" == str(isGm):

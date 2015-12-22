@@ -1,54 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <messages package="User">
     <!-- 客户端注册消息 -->
-    <message type="CS_REGISTER" name="Register" id="10201" base="true" comment="注册">
+    <message type="CS_REGISTER" name="Register" id="10201" base="true"
+             comment="注册" auth="false">
         <field name="username" type="string" comment="目前为邮箱"></field>
         <field name="password" type="string" comment="密码"></field>
         <field name="password2" type="string" comment="再次密码"></field>
     </message>
 
     <!-- 客户端注册返回消息 -->
-    <message type="SC_REGISTER" name="RegisterBack" id="10202" base="true" comment="登陆返回">
+    <message type="SC_REGISTER" name="RegisterBack" id="10202" base="true"
+             comment="登陆返回" auth="false">
         <field name="result" type="int" comment="结果"></field>
     </message>
 
     <!-- 客户端注册验证消息 -->
-    <message type="CS_REGCONFIRM" name="Regconfirm" id="10203" base="true" comment="注册验证">
+    <message type="CS_REGCONFIRM" name="Regconfirm" id="10203" base="true"
+             comment="注册验证" auth="false">
         <field name="uid" type="int" comment="用户id"></field>
         <field name="token" type="string" comment="用户token"></field>
     </message>
 
     <!-- 客户端注册验证返回消息 -->
-    <message type="SC_LOGIN" name="RegconfirmBack" id="10204" base="true" comment="注册验证返回">
+    <message type="SC_LOGIN" name="RegconfirmBack" id="10204" base="true"
+             comment="注册验证返回" auth="false">
         <field name="result" type="int" comment="结果"></field>
     </message>
 
     <!-- 客户端登陆消息 -->
-    <message type="CS_LOGIN" name="Login" id="10205" base="true" comment="登陆">
+    <message type="CS_LOGIN" name="Login" id="10205" base="true"
+             comment="登陆" auth="false">
         <field name="username" type="string" comment="用户名"></field>
         <field name="password" type="string" comment="密码"></field>
     </message>
 
     <!-- 客户端登陆返回消息 -->
-    <message type="SC_LOGIN" name="LoginBack" id="10206" base="true" comment="登陆返回">
+    <message type="SC_LOGIN" name="LoginBack" id="10206" base="true"
+             comment="登陆返回" auth="false">
         <field name="result" type="int" comment="结果"></field>
     </message>
 
     <!-- 客户端登出消息 -->
-    <message type="CS_LOGOUT" name="Logout" id="10207" comment="登出">
+    <message type="CS_LOGOUT" name="Logout" id="10207" base="true"
+             comment="登出" auth="false">
     </message>
 
     <!-- 客户端登出返回消息 -->
-    <message type="SC_LOGOUT" name="LogoutBack" id="10208" base="true" comment="登出返回">
+    <message type="SC_LOGOUT" name="LogoutBack" id="10208" base="true"
+             comment="登出返回" auth="false">
         <field name="result" type="int" comment="结果"></field>
     </message>
 
     <!-- 客户端请求玩家信息 -->
-    <message type="CS_USERINFO" name="GetUserInfo" id="10209" comment="获取玩家信息">
+    <message type="CS_USERINFO" name="GetUserInfo" id="10209"
+             comment="获取玩家信息" auth="false">
     </message>
 
     <!-- 服务端返回玩家信息 -->
-    <message type="SC_USERINFO" name="GetUserInfoBack" id="10210" comment="获取玩家信息返回">
+    <message type="SC_USERINFO" name="GetUserInfoBack" id="10210"
+             comment="获取玩家信息返回" auth="false">
         <field name="username" type="string" comment="账号"></field>
         <field name="email" type="string" comment="邮箱"></field>
         <field name="telephone" type="int" comment="手机号"></field>

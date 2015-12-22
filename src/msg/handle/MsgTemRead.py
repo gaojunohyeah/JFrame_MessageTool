@@ -41,7 +41,23 @@ def MsgFileBuild(temPath, messageBeans):
     if not builder.buildMsgFile():
         print "server msgbuild error in ServerMessageBuilder, message.js"
 
-    # 服务端MessageType.lua
+    # 服务端MessageType.js
     builder = ServerMsgTypeBuilder.ServerMsgTypeBuilder(messageBeans, env)
     if not builder.buildMsgFile():
-        print "server msgbuild error in ServerMsgTypeBuilder, MessageType.lua"
+        print "server msgbuild error in ServerMsgTypeBuilder, MessageType.js"
+
+    # 服务端MessageAuth.js
+    builder = ServerMsgAuthBuilder.ServerMsgAuthBuilder(messageBeans, env)
+    if not builder.buildMsgFile():
+        print "server msgbuild error in ServerMsgAuthBuilder, MessageAuth.js"
+
+    # 客户端端MessageType.js
+    builder = ClientMsgTypeBuilder.ClientMsgTypeBuilder(messageBeans, env)
+    if not builder.buildMsgFile():
+        print "server msgbuild error in ClientMsgTypeBuilder, MessageType.js"
+
+    # 客户端端reqMsg.js
+    builder = ClientReqMsgBuilder.ClientReqMsgBuilder(messageBeans, env)
+    if not builder.buildMsgFile():
+        print "server msgbuild error in ClientReqMsgBuilder, reqMsg.js"
+

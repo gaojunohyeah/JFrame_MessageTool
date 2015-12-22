@@ -1,0 +1,18 @@
+/**
+ * 消息类型集合
+ * Created by auto tool.
+ */
+
+'use strict';
+
+define(
+  [],
+  function () {
+    return {
+      {% for msgBean in msgBeans %}
+      // {{ msgBean.comment }}
+      {{ msgBean.package.upper() }}_{{ msgBean.name.upper() }} : {{ msgBean.id }},
+      {% endfor %}
+    }
+  }
+);
