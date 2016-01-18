@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages package="Car">
+    <!-- 客户端根据条件查询车辆数量消息 -->
+    <message type="CS_QUERYCARNUM" name="QueryCarNum" id="10301"
+             comment="根据条件查询车辆数量" auth="false">
+        <field name="queryList" type="list" comment="查询条件列表">
+            <field name="key" type="string" comment="查询key"></field>
+            <field name="oper" type="string" comment="查询操作符"></field>
+            <field name="value" type="string" comment="查询值"></field>
+        </field>
+    </message>
+
+    <!-- 客户端根据条件查询车辆数量返回消息 -->
+    <message type="SC_QUERYCARNUM" name="QueryCarNumBack" id="10302"
+             comment="根据条件查询车辆数量返回" auth="false">
+        <field name="queryNum" type="int" comment="查询数量"></field>
+    </message>
+
+    <!-- 客户端根据条件查询车辆消息 -->
+    <message type="CS_QUERYCARLIST" name="QueryCarList" id="10303"
+             comment="根据条件查询车辆数量" auth="false">
+        <field name="queryList" type="list" comment="查询条件列表">
+            <field name="key" type="string" comment="查询key"></field>
+            <field name="oper" type="string" comment="查询操作符"></field>
+            <field name="value" type="string" comment="查询值"></field>
+        </field>
+        <field name="pageNo" type="int" comment="当前查询页"></field>
+        <field name="pageSize" type="int" comment="查询页容量"></field>
+        <field name="order" type="string" comment="排序key"></field>
+    </message>
+
+    <!-- 客户端根据条件查询车辆返回消息 -->
+    <message type="SC_QUERYCARLIST" name="QueryCarListBack" id="10304"
+             comment="根据条件查询车辆数量返回" auth="false">
+        <field name="carList" type="list" comment="车辆列表">
+            <field name="id" type="long" comment="唯一ID"></field>
+            <field name="brandName" type="string" comment="品牌名称"></field>
+            <field name="seriesName" type="string" comment="系列名称"></field>
+            <field name="modelName" type="string" comment="型号名称"></field>
+            <field name="price" type="string" comment="价格"></field>
+            <field name="startTime" type="string" comment="上牌时间"></field>
+            <field name="distance" type="string" comment="行驶里程"></field>
+            <field name="showImg" type="string" comment="展示图片"></field>
+            <field name="tag" type="string" comment="推荐标签"></field>
+        </field>
+        <field name="pageNo" type="int" comment="当前查询页"></field>
+        <field name="pageSize" type="int" comment="查询页容量"></field>
+        <field name="order" type="string" comment="排序key"></field>
+        <field name="totalNum" type="int" comment="总数量"></field>
+    </message>
+</messages>

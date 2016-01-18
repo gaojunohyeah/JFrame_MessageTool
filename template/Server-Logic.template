@@ -6,9 +6,8 @@
 'use strict';
 
 // {{ msgBean.comment }}
-module.exports = function (reqData) {
-  var msg = new JF.msg.{{ msgBean.package }}{{ msgBean.name }}Msg();
-  msg.init(reqData);
+module.exports = function (reqData, req, res, next) {
+  var msg = new JF.msg.{{ msgBean.package }}{{ msgBean.name }}Msg(reqData);
 
   return null;
 };

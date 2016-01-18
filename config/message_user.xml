@@ -66,4 +66,41 @@
         <field name="img" type="string" comment="头像"></field>
         <field name="state" type="int" comment="状态(0未激活 1已激活)"></field>
     </message>
+
+    <!-- 客户端请求玩家信息 -->
+    <message type="CS_INITDATA" name="LoadInitData" id="10211"
+             comment="获取基础信息" auth="false">
+    </message>
+
+    <!-- 服务端返回玩家信息 -->
+    <message type="SC_INITDATA" name="LoadInitDataBack" id="10212"
+             comment="获取基础信息返回" auth="false">
+        <field name="brandlist" type="list" comment="品牌列表">
+            <field name="id" type="long" comment="id"></field>
+            <field name="name" type="string" comment="名称"></field>
+            <field name="letter" type="string" comment="首字母"></field>
+        </field>
+        <field name="carTypeList" type="list" comment="车类型列表">
+            <field name="id" type="long" comment="id"></field>
+            <field name="name" type="string" comment="名称"></field>
+        </field>
+        <field name="cityList" type="list" comment="城市列表">
+            <field name="id" type="long" comment="id"></field>
+            <field name="name" type="string" comment="名称"></field>
+            <field name="area" type="string" comment="区域"></field>
+        </field>
+        <field name="carColorList" type="list" comment="车辆颜色列表">
+            <field name="id" type="long" comment="id"></field>
+            <field name="name" type="string" comment="名称"></field>
+        </field>
+        <field name="tagsList" type="list" comment="车辆颜色列表">
+            <field name="id" type="long" comment="id"></field>
+            <field name="name" type="string" comment="名称"></field>
+        </field>
+        <field name="carSeriesList" type="list" comment="品牌系列列表">
+            <field name="id" type="long" comment="id"></field>
+            <field name="brandId" type="long" comment="品牌id"></field>
+            <field name="name" type="string" comment="名称"></field>
+        </field>
+    </message>
 </messages>

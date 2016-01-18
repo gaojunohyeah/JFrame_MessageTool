@@ -6,20 +6,19 @@
 'use strict';
 
 module.exports = function (data){
+  this.msgType = {{ msgBean.id }};
   if(!_.isUndefined(data) && !_.isNull(data)){
-    this.msgType = data.msgType || 0;
     {% for field in msgBean.fields -%}
     this.{{ field.name }} = data.{{ field.name }} || {% if 'string'==field.type %}''{% else %}0{% endif %};
     {% endfor %}
   }
-
-  this.setMsgtype = function(msgType){
-    this.msgType = msgType;
-  };
-
   {% for field in msgBean.fields %}
   this.set{{ field.name.capitalize()  }} = function({{ field.name }}){
     this.{{ field.name }} = {{ field.name }};
   };
-  {% endfor %}
+  {%- endfor %}
+
+  this.setResult = function(result) {
+    this.ret = result;
+  }
 };
