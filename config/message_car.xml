@@ -27,6 +27,7 @@
         <field name="pageNo" type="int" comment="当前查询页"></field>
         <field name="pageSize" type="int" comment="查询页容量"></field>
         <field name="order" type="string" comment="排序key"></field>
+        <field name="orderType" type="int" comment="排序类型(1升序 2降序)"></field>
     </message>
 
     <!-- 客户端根据条件查询车辆返回消息 -->
@@ -35,7 +36,8 @@
         <field name="carList" type="list" comment="车辆列表">
             <field name="id" type="long" comment="唯一ID"></field>
             <field name="brandName" type="string" comment="品牌名称"></field>
-            <field name="seriesName" type="string" comment="系列名称"></field>
+            <field name="seriesId" type="long" comment="系列Id"></field>
+            <field name="modelId" type="long" comment="型号Id"></field>
             <field name="modelName" type="string" comment="型号名称"></field>
             <field name="price" type="string" comment="价格"></field>
             <field name="startTime" type="string" comment="上牌时间"></field>
@@ -45,7 +47,53 @@
         </field>
         <field name="pageNo" type="int" comment="当前查询页"></field>
         <field name="pageSize" type="int" comment="查询页容量"></field>
-        <field name="order" type="string" comment="排序key"></field>
         <field name="totalNum" type="int" comment="总数量"></field>
+    </message>
+
+    <!-- 客户端获取车辆详细信息 -->
+    <message type="CS_QUERYCARINFO" name="QueryCarInfo" id="10305"
+             comment="获取车辆详细信息" auth="false">
+        <field name="carId" type="long" comment="车辆唯一id"/>
+    </message>
+
+    <!-- 客户端获取车辆详细信息返回消息 -->
+    <message type="SC_QUERYCARINFO" name="QueryCarInfoBack" id="10306"
+             comment="根据条件查询车辆数量返回" auth="false">
+        <field name="id" type="long" comment="车辆唯一id"/>
+
+        <field name="sellId" type="long" comment="车主id"/>
+        <field name="sellDesc" type="string" comment="车主描述"/>
+        <field name="sellTelephone" type="string" comment="手机号"/>
+        <field name="sellNickname" type="string" comment="昵称"/>
+        <field name="sellImg" type="string" comment="头像"/>
+
+        <field name="appraiserId" type="long" comment="评估师id"/>
+        <field name="appraiserDesc" type="string" comment="评估师描述"/>
+        <field name="apprTitle" type="string" comment="职称"/>
+        <field name="apprTelephone" type="string" comment="手机号"/>
+        <field name="apprNickname" type="string" comment="昵称"/>
+        <field name="apprImg" type="string" comment="头像"/>
+
+        <field name="brandId" type="long" comment="品牌id"/>
+
+        <field name="price" type="double" comment="价格"/>
+        <field name="distance" type="double" comment="行驶里程"/>
+        <field name="city" type="long" comment="城市id"/>
+        <field name="startTime" type="string" comment="上牌时间"/>
+
+        <field name="color" type="int" comment="颜色"/>
+        <field name="tag" type="string" comment="特殊标签"/>
+
+        <field name="seriesId" type="long" comment="系列Id"/>
+        <field name="modelId" type="long" comment="型号Id"/>
+        <field name="modelName" type="string" comment="型号名称"/>
+        <field name="carType" type="int" comment="车类型"/>
+        <field name="transmission" type="int" comment="变速箱(0自动 1手动)"/>
+
+        <field name="imgList" type="list" comment="车辆照片列表">
+            <field name="id" type="long" comment="唯一ID"/>
+            <field name="imgUrl" type="string" comment="图片url"/>
+            <field name="imgType" type="string" comment="图片类型(正面，侧面等)"/>
+        </field>
     </message>
 </messages>
