@@ -81,6 +81,10 @@
         <field name="city" type="long" comment="城市id"/>
         <field name="startTime" type="string" comment="上牌时间"/>
 
+        <field name="srvPrice" type="double" comment="服务费"/>
+        <field name="firstLoanPrice" type="double" comment="贷款首付"/>
+        <field name="monthLoanPrice" type="double" comment="贷款月供"/>
+
         <field name="color" type="int" comment="颜色"/>
         <field name="tag" type="string" comment="特殊标签"/>
 
